@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * *_memcpy - copies memory area
- * @dest: memory area
- * @src: origin
- * @n: src lenght
+ * *_memcpy - Copy the memory area.
+ * @dest: Area of memory.
+ * @src: Source.
+ * @n: Length of src lenght.
  *
- * Return: dest.
+ * Return: Dest.
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
