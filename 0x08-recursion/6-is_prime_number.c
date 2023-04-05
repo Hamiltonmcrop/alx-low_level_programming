@@ -6,7 +6,7 @@
  * @divisor: Divisor.
  *
  * Return: 0 if Divisible  Return 1 if in-divisible.
- *   
+ *
  */
 
 int is_divisible(int number, int divisor)
@@ -24,7 +24,7 @@ int is_divisible(int number, int divisor)
  * is_prime_number - Check if int is a prime number.
  * @n: Number.
  *
- * Return: 0 - If the integer is not prime 
+ * Return: 0 - If the number  not prime.
  *         1- If the number is prime.
  */
 int is_prime_number(int n)
