@@ -2,9 +2,7 @@
 
 /**
  * find_sqrt - Calculate natural square root of a number.
- * 
  * @number: Number
- * 
  * @root: The root to be tested.
  *
  * Return: The square root.
@@ -23,7 +21,6 @@ int find_sqrt(int number, int root)
 
 /**
  * _sqrt_recursion - Natural square root of a number.
- * 
  * @number: Number
  *
  * Return: Square root if its a natural square root.
