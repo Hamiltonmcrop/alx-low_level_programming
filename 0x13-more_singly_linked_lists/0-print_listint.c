@@ -2,9 +2,9 @@
 
 /**
  * print_listint - Prints all the elements of a listint_t.
- * @h -  linked list.
- *
- * Return - Number of nodes.
+ * @*h:  linked list.
+ *@h: counter.
+ * Return: Number of nodes.
  */
 
 size_t print_listint(const listint_t *h)
