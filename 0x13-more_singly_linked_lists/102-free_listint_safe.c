@@ -1,61 +1,41 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 /**
- * free_listint_safe - Frees a listint_t linked list.
- * @head: D.pointer to the start of the list.
+ * free_listint_safe - Frees a linked list
+ * @h: pointer to the first node in the linked list
  *
- * Return: Size of the list that was freed.
+ * Return: No of elements in the freed list
  */
-size_t free_listint_safe(listint_t **head)
+size_t free_listint_safe(listint_t **h)
 {
-	size_t count = 0;
-	size_t i;
-	listint_t *temp, **ptrs = NULL;
+	size_t len = 0;
+	int diff;
+	listint_t *temp;
 
-	if (!head || !*head)
-		return (count);
+	if (!h || !*h)
+		return (0);
 
-	while (*head)
+	while (*h)
 	{
-		ptrs = realloc(ptrs, (count + 1) * sizeof(*ptrs));
-		if (!ptrs)
+		diff = *h - (*h)->next;
+		if (diff > 0)
 		{
-			free_ptrs(ptrs, count);
-			exit(98);
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
+			len++;
 		}
-		for (i = 0; i < count; i++)
+		else
 		{
-			if (*head == ptrs[i])
-			{
-				*head = NULL;
-				free_ptrs(ptrs, count);
-				return (count);
-			}
+			free(*h);
+			*h = NULL;
+			len++;
+			break;
 		}
-		ptrs[count] = *head;
-		count++;
-		temp = (*head)->next;
-		free(*head);
-		*head = temp;
 	}
-	free_ptrs(ptrs, count);
-	return (count);
+
+	*h = NULL;
+
+	return (len);
 }
 
-/**
- * free_ptrs - Frees the pointer array.
- * @ptrs: Pointer to the start of the array.
- * @count: No of elements in the array.
- */
-void free_ptrs(listint_t **ptrs, size_t count)
-{
-	size_t i;
-
-	if (ptrs)
-	{
-		for (i = 0; i < count; i++)
-			ptrs[i] = NULL;
-		free(ptrs);
-	}
-}
