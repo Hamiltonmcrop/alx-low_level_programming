@@ -3,11 +3,10 @@
 #include <string.h>
 
 /**
-  * delete_nodeint_at_index - Function to delete  the 
-  *node at the index passed in
+  * delete_nodeint_at_index - Function to delete  the node at the index passed
   * @head: double pointer to list
   * @index: node position in list
-  * Return: 1  or -1 
+  * Return: 1  or -1
   */
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
