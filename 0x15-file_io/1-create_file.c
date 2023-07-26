@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * Author: Abel Rop
  * create_file - function that creates a file.
  * @filename: filename.
  * @text_content: content writed in the file.
